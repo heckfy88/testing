@@ -1,4 +1,4 @@
-package org.util;
+package org.web.utils;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
@@ -13,7 +13,7 @@ public class WebDriverCustomUtil {
         if (driver == null) {
             WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver();
-            driver.manage().timeouts().implicitlyWait(Duration.ZERO);
+            driver.manage().timeouts().implicitlyWait(Duration.ZERO); // explicit setup
             driver.manage().window().maximize();
         }
         return driver;
@@ -22,6 +22,7 @@ public class WebDriverCustomUtil {
     public static void quitDriver() {
         if (driver != null) {
             driver.quit();
+            driver = null;
         }
     }
 }

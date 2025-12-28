@@ -1,14 +1,11 @@
-package org.web;
+package org.web.tests;
 
-import org.BaseHabrTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import org.web.pages.HabrMainPage;
-import org.web.pages.HabrSearchPage;
 
 public class HabrWebTest extends BaseHabrTest {
 
-    @Test(priority = 1, description = "Открытие главной страницы в английской локализации")
+    @Test(priority = 1, description = "Открытие главной страницы")
     public void openMainPageTest() {
         mainPage.open();
 
